@@ -1,0 +1,32 @@
+/*
+ * anchor-core.css - STRUCTURE ONLY (position / display / pointer-events / sizing).
+ * Every visual value (colour, font, shadow) is a CSS variable with a fallback; themes in css/themes/*.css set them on :root.
+ *
+ * Theme variable contract (all optional; the fallback is the Anchor default look):
+ *   --arcade-text-color    main text + emoji control colour      (default #fff)
+ *   --arcade-font          font stack for HUD / UI text           (default "Courier New", monospace)
+ *   --arcade-glow          text-shadow for HUD / UI text          (HUD default 1px 1px 0 #000; controls: none)
+ *   --arcade-label-color   small HUD label (LEVEL)                (default #9aa5ff)
+ *   --arcade-accent-color  HUD labels SCORE / HI                  (default #ff3b3b)
+ *   --arcade-bg            harness mock-game background, top      (default #05060f)
+ *   --arcade-bg-2          harness mock-game background, bottom   (default #0b0f26)
+ *   --arcade-line          harness HUD-boundary line              (default #1d2350)
+ * lib/anchor-ui.js reads the first five directly (inline var() with the same fallbacks), so no game CSS is needed to keep working.
+ */
+html, body { margin: 0; height: 100%; overflow: hidden; touch-action: none; overscroll-behavior: none; }
+body { background: var(--arcade-bg, #05060f); }
+#wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+#stage { position: relative; width: min(100vw, calc(100dvh * 9 / 16)); aspect-ratio: 9 / 16; overflow: hidden; }
+
+/* mock game: a plain backdrop standing in for the canvas, plus the 40/640 HUD_H boundary */
+#mock-game { position: absolute; inset: 0; background: linear-gradient(var(--arcade-bg, #05060f), var(--arcade-bg-2, #0b0f26)); }
+#mock-game::before { content: ""; position: absolute; left: 0; top: 6.25%; width: 100%; border-top: 2px solid var(--arcade-line, #1d2350); }
+
+/* overlay that the Anchor HUD and controls mount into; it never swallows touches except on the picker */
+#ui-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 10; }
+
+#theme-picker { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: auto; z-index: 5;
+  color: var(--arcade-text-color, #fff); font-family: var(--arcade-font, "Courier New", monospace); text-shadow: var(--arcade-glow, none); text-transform: uppercase; font-weight: bold; }
+#theme-picker select { font: inherit; color: inherit; background: transparent; border: 2px solid var(--arcade-line, #1d2350); border-radius: 6px; padding: 8px 12px; cursor: pointer; text-shadow: inherit; }
+#theme-picker select option { color: CanvasText; background: Canvas; text-shadow: none; }   /* native dropdown list: system colours, not themed */
+#build { font-size: 11px; opacity: .6; }

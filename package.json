@@ -1,0 +1,8 @@
+{
+  "name": "arcade-ui-harness",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Game-free test harness for Anchor UI elements and CSS-variable theming (Brad's 80's Arcade)",
+  "scripts": { "test": "node test/harness.test.mjs", "serve": "python3 -m http.server 8080" }
+}

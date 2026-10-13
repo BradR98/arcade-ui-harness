@@ -1,0 +1,11 @@
+/* Halloween: pumpkin text, purple labels, slime-green accent, orange glow (system fonts only, so it works offline) */
+:root {
+  --arcade-text-color: #ff9d2e;
+  --arcade-font: "Chiller", "Papyrus", Georgia, serif;
+  --arcade-glow: 0 0 8px #ff6a00, 1px 1px 0 #000;
+  --arcade-label-color: #b388ff;
+  --arcade-accent-color: #7cff3a;
+  --arcade-bg: #120a1a;
+  --arcade-bg-2: #2a0f2e;
+  --arcade-line: #5b2a6e;
+}

@@ -1,0 +1,11 @@
+/* Mob Swarm: dark slate, system sans, green accent */
+:root {
+  --arcade-text-color: #ffffff;
+  --arcade-font: system-ui, sans-serif;
+  --arcade-glow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --arcade-label-color: rgba(255, 255, 255, 0.85);
+  --arcade-accent-color: #7dff9a;
+  --arcade-bg: #0b1020;
+  --arcade-bg-2: #141c38;
+  --arcade-line: #2a3566;
+}

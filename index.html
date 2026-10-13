@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#05060f">
+<meta name="description" content="Arcade UI Harness - test Anchor HUD / controls and CSS-variable themes without a game. Installable, plays offline.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="UI Harness">
+<title>Arcade UI Harness</title>
+<link rel="stylesheet" href="css/anchor-core.css">
+<link rel="stylesheet" id="theme-link" href="css/themes/akrynoid.css">
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <div id="mock-game"></div>
+  <div id="ui-overlay">
+    <div id="theme-picker">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select">
+        <option value="akrynoid">Akrynoid</option>
+        <option value="mob-swarm">Mob Swarm</option>
+        <option value="halloween">Halloween</option>
+      </select>
+      <div id="build"></div>
+    </div>
+  </div>
+</div></div>
+<script type="module" src="js/harness.js"></script>
+<script>
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+</script>
+</body></html>
