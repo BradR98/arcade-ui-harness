@@ -41,7 +41,7 @@ Note: emoji glyphs (🔊 ⏸️) ignore `color`; the theme tints their `text-sha
 3. `npm test` checks all of the above agree.
 
 ## Anchor lib
-`lib/` is a copy of `anchor-core-lib` (workspace source of truth). This repo is **not** a game, so it has no `.arcade-game` marker and `sync-anchor.sh` skips it; refresh it by hand: `cp ../anchor-core-lib/*.js lib/`, then bump the version and commit.
+`lib/` mirrors `anchor-core-lib` (workspace source of truth). This repo has an `.arcade-game` marker, so the workspace `sync-anchor.sh` keeps it identical and commits the update. Do not edit `lib/` here; patch `anchor-core-lib` and run the sync.
 
 ## Standing instructions: PWA
 - Cache-first `sw.js` precaches everything. **Bump the version on every deploy**: `CACHE` in `sw.js` and `BUILD_VERSION` in `version.js` must match (tested). Add any new file to `PRECACHE` (tested).
@@ -49,5 +49,5 @@ Note: emoji glyphs (🔊 ⏸️) ignore `color`; the theme tints their `text-sha
 
 ## Standing instructions: GitHub Pages
 - `.github/workflows/pages.yml` runs `npm test` then deploys on every push to `main`.
-- One-time setup: repo **Settings > Pages > Source: GitHub Actions**. All paths are relative, so it works under `/arcade-ui-harness/`.
+- Pages is enabled with source **GitHub Actions** (one-time: Settings > Pages, or `gh api -X POST repos/BradR98/arcade-ui-harness/pages -f build_type=workflow`). All paths are relative, so it works under `/arcade-ui-harness/`.
 - Before every commit: update `README.md`, `BACKLOG.md`, `CHANGELOG.md`, `PROJECT_STATUS.md` (Arcade Standing Order 2).

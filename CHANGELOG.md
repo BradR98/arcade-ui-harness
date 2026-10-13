@@ -1,5 +1,9 @@
 # Changelog
 
+## Build 0.0.1 (deploy)
+- Added `.arcade-game` marker; `lib/` now managed by `sync-anchor.sh` (identical to `anchor-core-lib`).
+- Published to GitHub (public) and enabled Pages (Actions source). No code change, so the version stays 0.0.1.
+
 ## Build 0.0.1
 - Initial scaffold: game-free harness with mock backdrop, `#ui-overlay`, Anchor emoji controls and DOM HUD (`initAnchorHUD`, 6-digit Level / Score / High).
 - CSS architecture: `css/anchor-core.css` (structure only; paint via `var(--arcade-*)` with fallbacks) and themes `akrynoid`, `mob-swarm`, `halloween`.
