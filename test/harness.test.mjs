@@ -31,7 +31,7 @@ ok(/id="ui-overlay"/.test(html) && /id="theme-select"/.test(html) && /rel="manif
 // --- themes ---
 const REQUIRED = ['--arcade-text-color', '--arcade-font', '--arcade-glow', '--arcade-label-color', '--arcade-accent-color', '--arcade-bg', '--arcade-bg-2', '--arcade-line'];
 const themeFiles = readdirSync(join(root, 'css/themes')).filter((f) => f.endsWith('.css')).map((f) => f.replace('.css', '')).sort();
-ok(themeFiles.join() === 'akrynoid,halloween,mob-swarm', 'themes: akrynoid, halloween, mob-swarm');
+ok(themeFiles.join() === 'arktrix,halloween,mob-swarm', 'themes: arktrix, halloween, mob-swarm');
 for (const t of themeFiles) {
   const css = read('css/themes/' + t + '.css');
   ok(/:root\s*\{/.test(css) && REQUIRED.every((v) => new RegExp(v + '\\s*:').test(css)), t + ' defines every required :root variable');

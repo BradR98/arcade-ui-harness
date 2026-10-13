@@ -3,7 +3,7 @@
  * IMPORTANT: cache-first means returning visitors keep the cached build until CACHE changes.
  * Bump the version below on every deploy, in step with version.js (test/harness.test.mjs enforces they match).
  */
-const CACHE = 'arcade-ui-harness-v0.0.1';
+const CACHE = 'arcade-ui-harness-v0.0.2';
 const PRECACHE = [
   './',
   'index.html',
@@ -11,7 +11,7 @@ const PRECACHE = [
   'version.js',
   'manifest.json',
   'css/anchor-core.css',
-  'css/themes/akrynoid.css',
+  'css/themes/arktrix.css',
   'css/themes/mob-swarm.css',
   'css/themes/halloween.css',
   'icons/icon-180.png',

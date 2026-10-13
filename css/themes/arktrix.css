@@ -1,4 +1,4 @@
-/* Arktrix / Akrynoid: navy CRT arcade (matches the values the game paints today) */
+/* Arktrix: navy CRT arcade (matches the values the game paints today) */
 :root {
   --arcade-text-color: #ffffff;
   --arcade-font: "Courier New", monospace;

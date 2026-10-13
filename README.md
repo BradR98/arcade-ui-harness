@@ -16,7 +16,7 @@ npm test             # PWA wiring, version single-source, theme contract, struct
 | `index.html` | `#stage` > `#mock-game` + `#ui-overlay` (theme `<select>`, HUD and controls mount here) |
 | `js/harness.js` | mock `loop` / `audio`, `createControls`, `initAnchorHUD`, theme switcher (remembers the choice in `localStorage`) |
 | `css/anchor-core.css` | **Structure only** (position / flex / pointer-events / sizing). All paint is `var(--arcade-*, fallback)` |
-| `css/themes/*.css` | **Paint**: each defines the `:root` variables below (`akrynoid`, `mob-swarm`, `halloween`) |
+| `css/themes/*.css` | **Paint**: each defines the `:root` variables below (`arktrix`, `mob-swarm`, `halloween`) |
 | `lib/` | Copy of `anchor-core-lib` (see "Anchor lib" below) |
 
 ## Theme variables

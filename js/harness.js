@@ -7,7 +7,7 @@ import { createControls, initAnchorHUD } from '../lib/anchor-ui.js';
 import { BUILD_VERSION } from '../version.js';
 
 /** name -> stylesheet. Keep in sync with <select> options and css/themes/ (test/harness.test.mjs checks all three). */
-export const THEMES = { akrynoid: 'css/themes/akrynoid.css', 'mob-swarm': 'css/themes/mob-swarm.css', halloween: 'css/themes/halloween.css' };
+export const THEMES = { arktrix: 'css/themes/arktrix.css', 'mob-swarm': 'css/themes/mob-swarm.css', halloween: 'css/themes/halloween.css' };
 const STORE_KEY = 'arcade-ui-harness.theme';
 
 const overlay = document.getElementById('ui-overlay');
@@ -44,4 +44,4 @@ function applyTheme(name) {
 }
 select.addEventListener('change', () => applyTheme(select.value));
 let saved = null; try { saved = localStorage.getItem(STORE_KEY); } catch (_) { /* ignore */ }
-applyTheme(THEMES[saved] ? saved : 'akrynoid');
+applyTheme(THEMES[saved] ? saved : 'arktrix');
